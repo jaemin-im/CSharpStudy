@@ -6,27 +6,30 @@ using System.Threading.Tasks;
 
 namespace CSharpStudy
 {
+    public class MyClass
+    {
+        private string name = "John";
+
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                name = value;
+            }
+        }
+    }
     class Program
     {
         static void Main(string[] args)
         {
-            string randStr = "Here are some random character";
-            string randStr2 = "Here are some other random character";
-
-            foreach(char c in randStr)
-            {
-                Console.Write(c);
-            }
-            foreach(char c in randStr2)
-            {
-
-            }
-            Console.WriteLine("\nIs Empty : " + String.IsNullOrEmpty(randStr));
-            Console.WriteLine("Is Empty(WhiteSpace) : " + String.IsNullOrWhiteSpace(randStr));
-            Console.WriteLine(randStr.Length);
-            Console.WriteLine("Index of are : " + randStr.IndexOf("are")); // 5
-            Console.WriteLine("2nd Word is : " + randStr.Substring(5, 3)); // are
-            Console.WriteLine("Is equal with")
+            MyClass mc = new MyClass();
+            Console.WriteLine("mc.Name : {0}", mc.Name);
+            mc.Name = "Bree";
+            Console.WriteLine("mc.Name : {0}", mc.Name);
         }
     }
 }
